@@ -51,5 +51,6 @@ class _$BaseServiceCWProxyImpl<T> implements _$BaseServiceCWProxy<T> {
 
 extension $BaseServiceCopyWith<T> on BaseService<T> {
   /// Returns a callable class that can be used as follows: `instanceOfBaseService.copyWith(...)` or like so:`instanceOfBaseService.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
   _$BaseServiceCWProxy<T> get copyWith => _$BaseServiceCWProxyImpl<T>(this);
 }

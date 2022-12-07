@@ -12,7 +12,7 @@ class BaseService<T> {
 
   BaseService({required this.adapter});
 
-  BaseService<T> offline(){
+  BaseService<T> offline() {
     final _adapter = adapter.offline();
     return copyWith(adapter: _adapter);
   }
@@ -20,11 +20,11 @@ class BaseService<T> {
   /*
   return the id of the created object
    */
-  Future<Result<T>> add<T>(JsonObject dto, {final bool forceRemoteTrans = false}) async =>
+  Future<Result<T>> add<T>(JsonObject dto,
+          {final bool forceRemoteTrans = false}) async =>
       await adapter.add<T>(dto, forceRemoteTrans: forceRemoteTrans);
 
-  Future<Result<T>> addById<T>(
-          String id, JsonObject dto) async =>
+  Future<Result<T>> addById<T>(String id, JsonObject dto) async =>
       await adapter.addById<T>(dto);
 
   /*
@@ -38,10 +38,8 @@ class BaseService<T> {
 
   Future<Result> deleteById(IDs ids) async => await adapter.deleteById(ids);
 
-
   Future<Result<T>> update<T>(JsonObject<T> dto) async =>
       await adapter.update<T>(dto);
-
 
   Future<Result<List<T>>> getAll<T>({
     dynamic field,
@@ -67,6 +65,7 @@ class BaseService<T> {
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         isNull: isNull,
+        limit: limit,
         // query: query,
         // startAfterDoc: startAfterDoc,
       );

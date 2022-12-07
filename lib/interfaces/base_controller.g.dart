@@ -51,6 +51,7 @@ class _$BaseControllerCWProxyImpl<T> implements _$BaseControllerCWProxy<T> {
 
 extension $BaseControllerCopyWith<T> on BaseController<T> {
   /// Returns a callable class that can be used as follows: `instanceOfBaseController.copyWith(...)` or like so:`instanceOfBaseController.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
   _$BaseControllerCWProxy<T> get copyWith =>
       _$BaseControllerCWProxyImpl<T>(this);
 }

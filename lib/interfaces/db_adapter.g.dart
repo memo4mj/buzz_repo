@@ -98,5 +98,6 @@ class _$DbAdapterCWProxyImpl<T> implements _$DbAdapterCWProxy<T> {
 
 extension $DbAdapterCopyWith<T> on DbAdapter<T> {
   /// Returns a callable class that can be used as follows: `instanceOfDbAdapter.copyWith(...)` or like so:`instanceOfDbAdapter.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
   _$DbAdapterCWProxy<T> get copyWith => _$DbAdapterCWProxyImpl<T>(this);
 }

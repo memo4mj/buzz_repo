@@ -13,8 +13,7 @@ class BaseController<T> {
 
   BaseController({required this.service});
 
-
-  BaseController<T> offline(){
+  BaseController<T> offline() {
     final _service = service.offline();
     return copyWith(service: _service);
   }
@@ -37,7 +36,19 @@ class BaseController<T> {
     int limit = 10,
   }) async {
     try {
-      return await service.getAll<T>();
+      return await service.getAll<T>(
+        field: field,
+        isEqualTo: isEqualTo,
+        isLessThan: isLessThan,
+        isLessThanOrEqualTo: isLessThanOrEqualTo,
+        isGreaterThan: isGreaterThan,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
+        arrayContains: arrayContains,
+        arrayContainsAny: arrayContainsAny,
+        whereIn: whereIn,
+        isNull: isNull,
+        limit: limit,
+      );
     } catch (e) {
       return Result.error(msg: e.toString());
     }
@@ -69,7 +80,6 @@ class BaseController<T> {
 
   Future<Result<T>> addById<T>(String id, JsonObject<T> dto) async =>
       await service.addById<T>(id, dto);
-
 
   Future<Result<T>> write<T>(JsonObject<T> dto) async =>
       dto.ids.hasIDs ? await update(dto) : await add<T>(dto);

@@ -84,5 +84,6 @@ class _$SyncDtoCWProxyImpl implements _$SyncDtoCWProxy {
 
 extension $SyncDtoCopyWith on SyncDto {
   /// Returns a callable class that can be used as follows: `instanceOfSyncDto.copyWith(...)` or like so:`instanceOfSyncDto.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
   _$SyncDtoCWProxy get copyWith => _$SyncDtoCWProxyImpl(this);
 }

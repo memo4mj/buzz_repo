@@ -62,5 +62,6 @@ class _$IDsCWProxyImpl implements _$IDsCWProxy {
 
 extension $IDsCopyWith on IDs {
   /// Returns a callable class that can be used as follows: `instanceOfIDs.copyWith(...)` or like so:`instanceOfIDs.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
   _$IDsCWProxy get copyWith => _$IDsCWProxyImpl(this);
 }
